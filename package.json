@@ -1,0 +1,44 @@
+{
+  "name": "apk-hub-backend",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "tsc && node dist/tests/verify.js",
+    "test:ota": "tsc && node dist/tests/otaDownload.test.js",
+    "test:github": "tsc && node dist/tests/github.test.js"
+  },
+  "dependencies": {
+    "@clerk/backend": "^3.17.1",
+    "@clerk/express": "^2.1.66",
+    "@supabase/supabase-js": "^2.116.0",
+    "adm-zip": "^0.5.16",
+    "apk-hub-sdk": "^1.0.0",
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "express-rate-limit": "^7.5.0",
+    "firebase-admin": "^14.3.0",
+    "lanes-engine": "^2.1.0",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^2.0.1",
+    "sql.js": "^1.14.2",
+    "uuid": "^11.1.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/adm-zip": "^0.5.7",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.3",
+    "@types/jsonwebtoken": "^9.0.9",
+    "@types/multer": "^1.4.12",
+    "@types/node": "^22.15.21",
+    "@types/uuid": "^10.0.0",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.3"
+  }
+}

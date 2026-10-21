@@ -1,0 +1,50 @@
+services:
+  - type: web
+    name: sproutly-backend
+    runtime: node
+    region: oregon
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: node dist/index.js
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: "3001"
+      - key: SUPABASE_URL
+        value: https://qbpqeexztvlqumedjncn.supabase.co
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: SUPABASE_KEY
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: GITHUB_PAT
+        sync: false
+      - key: GITHUB_STORAGE_OWNER
+        value: Mr-Perfect-252
+      - key: GITHUB_STORAGE_REPO
+        value: Apex-Hub-Storage
+      - key: GITHUB_BRANCH
+        value: main
+      - key: GITHUB_APP_ID
+        sync: false
+      - key: GITHUB_CLIENT_ID
+        sync: false
+      - key: GITHUB_CLIENT_SECRET
+        sync: false
+      - key: GITHUB_APP_PRIVATE_KEY
+        sync: false
+      - key: GITHUB_WEBHOOK_SECRET
+        sync: false
+      - key: GITHUB_CONSOLE_URL
+        value: https://sproutly-console.vercel.app
+      - key: PUBLIC_BASE_URL
+        value: https://sproutly-backend.onrender.com
+      - key: ALLOWED_ORIGINS
+        value: https://sproutly-console.vercel.app,https://sproutly-store.vercel.app,https://sproutly-dev-store.vercel.app,https://sproutly-dev.vercel.app
+      - key: STORAGE_PROVIDER
+        value: local
+      - key: PUBLIC_CONSOLE_URL
+        value: https://sproutly-console.vercel.app
